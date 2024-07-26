@@ -1,15 +1,12 @@
 
-# Appium + WebDriver.IO Demo Framework - Android & IOS Example
 
-This project has been created to demonstrate how a QA Engineer can perform Mobile Testing using Appium + WebDriver.IO
-More commands and insights about the integration at [WebDriverIO Appium docs](https://webdriver.io/docs/api/appium/)
 
 - - - 
 ## General System Requirements
 
 #### Node JS
 
-We need node js to download Appium beta version & drivers easily.
+
 * Download[ Node Js](https://linktodocumentation) depending on your operating system.
 #### Java JDK & JAVA_HOME variable
 
@@ -17,7 +14,7 @@ We need node js to download Appium beta version & drivers easily.
 * [JAVA_HOME setup for Windows](https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html)
 * [JAVA_HOME setup for Mac](https://mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/)
 
-I Tested the following steps on MAC OS Monterrey:
+
 
 * Installed Adopted [Open JDK with Homebrew](https://formulae.brew.sh/cask/adoptopenjdk)
 * To return where was the SDK installed I used the command:
@@ -56,7 +53,7 @@ I Tested the following steps on MAC OS Monterrey:
 * [ANDROID_HOME setup for Windows](https://www.testingdocs.com/setting-android_home-environment-variable-on-windows/)
 * [ANDROID_HOME setup for Mac](https://stackoverflow.com/questions/19986214/setting-android-home-enviromental-variable-on-mac-os-x)
 
-Tested the following steps on MAC OS Monterrey:
+
 * Android studio on Mac can be located at:
 ```bash
     * cd /Users/[USER]/Library/Android/sdk
@@ -91,25 +88,6 @@ Tested the following steps on MAC OS Monterrey:
 ```
 - - -
 
-## IOS Setup
-
-1. Install XCode from the MacOs App Store
-2. Install [XCode Command line tools](https://www.freecodecamp.org/news/install-xcode-command-line-tools/)
-```bash
-    xcode-select --install
-```
-- Make sure it is installed correctly using the following command:
-```bash
-    xcode-select -p
-```
-- It should return something like(may defer from your OS version):
-```bash
-    /Applications/Xcode.app/Contents/Developer
-```
-3. Install Carthage(It is a simple dependency manager for macOS and iOS, created by a group of developers from GitHub).
-```bash
-    brew install carthage
-```
 
 ---
 
@@ -135,14 +113,7 @@ Android Desired Capabilities(Example)
 | app | /[PROJECT_PATH]/[APP_NAME].apk |
 | appium:automationName | UIAutomator2 |
 
-IOS Desired Capabilities(Emulator - App)
-| Desired Capability Key  | Desired Capability Value |
-| ------------- | ------------- |
-| platformName  | IOS |
-| platformVersion  | [OS VERSION / IMAGE]  |
-| deviceName | [EMULATED_DEVICE_NAME] | 
-| app | /[PROJECT_PATH]/[APP_NAME].app |
-| appium:automationName | XCUItest |
+|
 
 #### Install Apium 
 Appium is an open source test automation framework for use with native, hybrid and mobile web apps. 
@@ -182,18 +153,6 @@ Check the installed drivers using
 appium driver list
 ```
 
-#### Sample applications
-Sample Application that you can use:
-
-[SauceDemo Hybrid App - React Native)](https://github.com/saucelabs/my-demo-app-rn) - (Framework is configured to use this one)
-
-[Sauce Labs Native Sample Application](https://github.com/saucelabs/sample-app-mobile)
-
-[WebdriverIO Demo App for iOS and Android](https://github.com/webdriverio/native-demo-app)
-
-***Important Note:***
-For IOS you are going to need an app build to run it in simulators, but an .IPA file to run it in real devices. It required additonal desired capabilities, and you can see which ones in the next article: [Appium XCUITest Driver Real Device Setup
-](https://appium.io/docs/en/drivers/ios-xcuitest-real-devices/)
 
 ## Setup WebDriverIO
 
@@ -237,16 +196,6 @@ capabilities: [{
         // "appium:appWaitActivity": "com.swaglabsmobileapp.MainActivity"
     }],
 ```
-* Set up the capabilities for Android(Emulator sample)
-```bash
-capabilities: [{
-        platformName: 'IOS',
-        "appium:device-name": 'iPhone 13 Pro Max',
-        "appium:platformVersion": "16.0",
-        "appium:automationName": "XCUItest",
-        "appium:app": iosAppPath,   
-    }]
-```
 
 * Install Appium in your project
 ```bash
@@ -280,20 +229,51 @@ if you want to run this project:
 
 5- npm run wdioIOS/wdioAndroid
 
-## Android setup & demo
-[![ANDROID TESTING VIDEO](https://i.ytimg.com/vi/KN1sTvvX0mM/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBgoIVXC8QqNpzuuw9sdzSkOos1lg)](https://www.youtube.com/watch?v=KN1sTvvX0mM&t=2569s)
-
-## IOS setup & demo
-[![IOS TESTING VIDEO](https://i.ytimg.com/vi/Q5Oy8axA8Qw/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBoa-PxuNR5xJ0U8NM4J0sigtqwgg)](https://www.youtube.com/watch?v=Q5Oy8axA8Qw&ab_channel=JoanMedia)
-
-
-### Extra Information
-
-* [UI Selectors (Android)](https://developer.android.com/reference/androidx/test/uiautomator/UiSelector)
-
-* [Predicate Strings Selectors (IOS)](https://appium.io/docs/en/writing-running-appium/ios/ios-predicate/)
-
-* [Class Chain Selectors (IOS)](https://github.com/facebookarchive/WebDriverAgent/wiki/Class-Chain-Queries-Construction-Rules)
-
-### Notes
-* To manage node versions you can install "n" using the command "npm install -g n". Then you can install the version you may need, for instance "n 16.15.1"(LTS version where this project is working fine.)
+Home Test Assignment for Mobile Automation QA
+-Automate the login functionality of a mobile application (attached .apk file) using Appium. 
+-Supports iOS or Android native
+Requirements:
+⁃ The mobile application has a login screen where users can enter their username and password to
+access the app. 
+⁃ Write a test script that automates the login process and verifies whether the login is successful or
+not.
+Test Script:
+⁃ Write a test script to automate the following steps:
+⁃ Launch the mobile application.
+⁃ Enter a valid username and password into the respective fields on the login screen.
+⁃ Click on the login button.
+⁃ Verify whether the login is successful by checking for the presence of a specific element on the next
+screen after login (e.g., a welcome message or dashboard).
+-Cover all positive and negative test cases for this login scenario.
+-Use Appium and include a readme file with instructions on how to run
+-Ensure that your code is following the Page object model design pattern and also has feature files
+written in Cucumber BDD.
+-Ensure your code can generate the reports.
+-Ensure your code is well-organised with proper comments and coding guidelines being followed
+-Share your code over your GitHub/BitBucket repo which is accessible for us to review along with the
+recording for the successful test runs.
+-The code should be written in JavaScript or Typescript using Webdriver IO and Appium.
+Please use the attached .apk file and you can use the below test data.
+Test Data:
+LOGIN_USERS = {
+  LOCKED: {
+    username: &#39;alice@example.com&#39;,
+    password: &#39;10203040&#39;,
+  },
+  NO_MATCH: {
+    username: &#39;1@2.com&#39;,
+    password: &#39;f-o-o&#39;,
+  },
+  NO_USER_DETAILS: {
+    username: &#39;&#39;,
+    password: &#39;&#39;,
+  },
+  NO_PASSWORD: {
+    username: &#39;bob@example.com&#39;,
+    password: &#39;&#39;,
+  },
+  STANDARD: {
+    username: &#39;bob@example.com&#39;,
+    password: &#39;10203040&#39;,
+  },
+}
