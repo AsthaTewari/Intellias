@@ -195,6 +195,15 @@ capabilities: [{
         "appium:app": androidAppPath,
         // "appium:appWaitActivity": "com.swaglabsmobileapp.MainActivity"
     }],
+```* Set up the capabilities for Android(Emulator sample)
+```bash
+capabilities: [{
+        platformName: 'IOS',
+        "appium:device-name": 'iPhone 13 Pro Max',
+        "appium:platformVersion": "16.0",
+        "appium:automationName": "XCUItest",
+        "appium:app": iosAppPath,   
+    }]
 ```
 
 * Install Appium in your project
